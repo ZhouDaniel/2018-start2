@@ -1,0 +1,655 @@
+@charset "UTF-8";
+/*广告*/
+.index-ad{
+    border-bottom:1px solid #eeeeef;
+    position: relative;
+}
+.index-ad .ad-ctr{
+    padding: 5px 0 16px;
+    display: block;
+}
+.index-ad .mark p {
+    opacity: 0.4;
+    color: #3e3a39;
+    font-size: 12px;
+}
+.index-ad .title h3{
+    text-align:center;
+    color: #3e3a39;
+    font-size: 17px;
+    line-height: 35px;
+    font-weight: 400;
+}
+.index-ad .title h4 {
+    text-align: center;
+    font-size: 12px;
+    color: #717071;
+    font-weight: 400;
+}
+.index-ad .title h4 i {
+    color: #e50012;
+    border: 1px solid #e50012;
+    border-radius: 3px;
+    padding: 1px 2px;
+    margin-right: 5px;
+    margin-left: 3px;
+}
+
+.index-ad .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.index-ad .close i {
+    background: #bdb9b8;
+    color: #fff;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: block;
+    line-height: 20px;
+}
+.index-ad .tag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #ff7800;
+    color: #fff;
+    font-size: 12px;
+    padding: 1px 2px;
+}
+
+
+/*nav*/
+nav {
+    background: #006ab8;
+    margin-top: 10px;
+    border-bottom: 2px solid #fff;
+}
+nav ul{
+    height:40px;
+}
+nav ul li{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 20%;
+    border-right: 1px solid #fff;
+    float: left;
+}
+nav ul li a{
+    color:white;
+}
+nav ul li:last-child {
+    border-right: none;
+}
+/*banner*/
+.index-banner {
+    background: #006ab8 url("../images/banner01.png") no-repeat center center;
+    background-size: cover;
+}
+.index-banner .hd {
+    padding-top:15px;
+    text-align: center;
+}
+.index-banner .hd h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+.index-banner .hd h3 {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+}
+.index-banner .hd p {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+.index-banner .hd p em {
+    background: #e50012;
+    border-radius: 3px;
+    padding: 1px 4px;
+    margin: 0 1px;
+}
+.index-banner .hd p i {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1px;
+    width: 45px;
+    background: #fff;
+    margin: 0 5px;
+}
+.index-banner .bd {
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+
+}
+.index-banner .bd .wrap {
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    background: #fff;
+    border: 1px solid #ff7800;
+    border-radius: 30px;
+    width: 56%;
+    margin: 0 auto;
+}
+.index-banner .bd .wrap .tel {
+    color: #231815;
+    font-size: 14px;
+    font-weight: 400;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.index-banner .bd .wrap .tel em {
+    background: url("../images/tel.png") no-repeat center center;
+    background-size: 12px auto;
+    display: block;
+    width: 12px;
+    height: 16px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.index-banner .bd .wrap .btn {
+    background: #ff7800;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 0 30px 30px 0;
+    padding: 0 10px;
+}
+/*副主任医师*/
+.index-teacher {
+    background: url("../images/demo04.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    padding-top: 10px;
+}
+.index-teacher .hd {
+    width: 38%;
+    margin-right: 4%;
+    display: -ms-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: flex-end;
+}
+.index-teacher .hd img {
+    width: 100%;
+    display: block;
+}
+.index-teacher .bd {
+    flex: 1;
+    padding-right: 6px;
+    padding-bottom: 10px;
+}
+.index-teacher .bd .title h3 {
+    border-bottom: 1px solid #c8c9ca;
+    padding-bottom: 6px;
+}
+.index-teacher .bd .title h3 b {
+    color: #006ab8;
+    font-size: 25px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.index-teacher .bd .title h3 span {
+    color: #231815;
+    font-size: 16px;
+    font-weight: 400;
+}
+.index-teacher .bd .title ul {
+    margin-top: 6px;
+}
+
+.index-teacher .bd .title ul li {
+    color: #3e3a39;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    padding-left: 12px;
+    position: relative;
+}
+.index-teacher .bd .title ul li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 7px;
+    height: 7px;
+    background: #3e3a39;
+    transform: rotate(45deg);
+}
+.index-teacher .bd .btn-tel {
+    margin-top: 6px;
+}
+.index-teacher .bd .btn-tel a {
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    background: #fff;
+    border: 1px solid #ff7800;
+    border-radius: 30px;
+    width: 100%;
+    margin: 0 auto;
+}
+.index-teacher .bd .btn-tel a .tel {
+    display: block;
+    color: #231815;
+    font-size: 14px;
+    font-weight: 400;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.index-teacher .bd .btn-tel a .tel em {
+    background: url("../images/tel.png") no-repeat center center;
+    background-size: 12px auto;
+    display: block;
+    width: 12px;
+    height: 16px;
+    margin-right: 5px;
+}
+.index-teacher .bd .btn-tel a .btn {
+    background: #ff7800;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 0 30px 30px 0;
+    padding: 0 10px;
+}
+
+/*会议*/
+.index-meeting ul li {
+    float: left;
+    width: 31%;
+    margin: 0 1%;
+    position: relative;
+}
+.index-meeting ul li img {
+    width: 100%;
+    display: block;
+}
+
+.index-meeting ul li p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+.index-meeting ul li p span {
+    display: block;
+    height: 36px;
+    overflow: hidden;
+}
+
+/* 班主任诊室现场 */
+.index-live {
+    background: #006ab8;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+.index-live h2 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+.live-banner {
+    width:60%;
+    margin-left:20%;
+
+}
+.index-live h2 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+.index-live .pagination {
+    text-align: center;
+    margin-top: 10px;
+}
+.live-banner  img {
+    width: 100%;
+    display: block;
+    border-radius: 4px 4px 0 0;
+}
+.live-banner  .text {
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    padding: 10px;
+}
+.live-banner  .text p {
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    height: 40px;
+    overflow: hidden;
+}
+/*team*/
+.index-team {
+    padding: 20px 0;
+}
+.index-team h2 {
+    text-align: center;
+    color: #006ab8;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+.index-team ul {
+    margin-top: 10px;
+}
+.index-team ul li {
+    float: left;
+    width: 25%;
+    padding: 0 8px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.index-team ul li img {
+    max-width: 100%;
+}
+.index-team ul li h3 {
+    color: #505050;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-top: 5px;
+}
+.index-team ul li p {
+    color: #505050;
+    font-size: 12px;
+    font-weight: 400;
+}
+/*表格*/
+.index-tabel {
+    background: #006ab8;
+}
+.index-tabel h3 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 35px;
+    border-bottom: 1px solid #fff;
+}
+.index-tabel table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+.index-tabel table .t1 {
+    width: 20%;
+}
+
+.index-tabel table .t2 {
+    width: 15%;
+}
+
+.index-tabel table .t3 {
+    width: 30%;
+}
+
+.index-tabel table .t4 {
+    width: 35%;
+}
+.index-tabel table td,
+.index-tabel table th {
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    text-align: center;
+    padding: 6px 5px;
+}
+.index-tabel table td {
+    background: #f7f7f7;
+    color: #707070;
+}
+/* 电话 */
+.index-btn {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #dbdcdc;
+}
+.index-btn a {
+    margin: 0 10px;
+}
+.index-btn .btn-tel {
+    height: 40px;
+    background: #00c41c;
+    border-radius: 40px;
+    padding-left: 45px;
+    position: relative;
+    padding-right: 20px;
+    padding-top: 1px;
+}
+.index-btn .btn-tel .ico {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    background: #fff url("../images/tel02.png") no-repeat center center;
+    background-size: 28px auto;
+}
+.index-btn .btn-tel p {
+    font-size: 14px;
+    color: #fff;
+    line-height: 18px;
+    margin-top: 4px;
+}
+.index-btn .btn-tel p span {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+}
+.index-btn .btn-num {
+    height: 40px;
+    background: #ff7800;
+    border-radius: 40px;
+    padding-left: 45px;
+    position: relative;
+    padding-right: 20px;
+}
+.index-btn .btn-num .ico {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    background: #fff url("../images/date.png") no-repeat center center;
+    background-size: 28px auto;
+}
+.index-btn .btn-num p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 40px;
+}
+/* 诊疗项目 */
+.index-project {
+    padding: 20px 0 0;
+}
+.index-project h2 {
+    text-align: center;
+    color: #006ab8;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+.index-project ul li {
+    float: left;
+    width: calc(20% - 6px);
+    margin: 0 3px 6px;
+    background: #006ab8;
+    height: 35px;
+    color: #fff;
+    line-height: 35px;
+    text-align: center;
+}
+.index-project ul li span {
+    color: #fff000;
+}
+.index-project ul .li1 {
+    width: calc(13.333% - 6px);
+}
+
+/* 上海江城皮肤病医院 */
+.index-form {
+    margin: 30px 5px 5px;
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+    padding-top: 0;
+}
+.index-form h2 {
+    line-height: 40px;
+    color: white;
+    font-size: 16px;
+    background: #006ab8;
+    text-align: center;
+}
+
+.index-form h3 {
+    color: black;
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 400;
+}
+.index-form h3 span {
+    color: #a40000;
+}
+.index-form li {
+    display: flex;
+    margin-bottom: 15px;
+}
+.index-form li .name {
+    color: black;
+    font-size: 14px;
+    width: 80px;
+}
+.index-form li .name i {
+    display: inline-block;
+    width: 2em;
+}
+.index-form li .input {
+   flex:1
+}
+.index-form li .input input {
+    height: 35px;
+    line-height: 18px;
+    padding: 8px;
+    border: 1px solid #a0a0a0;
+    width: 100%;
+    border-radius: 0;
+    font-size: 14px;
+}
+.index-form li .input textarea {
+    height: 120px;
+    line-height: 18px;
+    padding: 8px;
+    border: 1px solid #a0a0a0;
+    width: 100%;
+    border-radius: 0;
+}
+.index-form li .submit {
+    flex: 1;
+    margin-left: 80px;
+}
+.index-form li .submit input {
+    height: 35px;
+    line-height: 35px;
+    border: none;
+    background: #006ab8;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 0;
+    padding: 0 15px;
+    margin-right: 20px;
+}
+.index-form li .submit button {
+    height: 35px;
+    line-height: 35px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 0;
+    padding: 0 15px;
+}
+.index-form li .tips {
+    width: 30px;
+    text-align: center;
+    color: #a40000;
+}
+
+/* order */
+.index-order {
+    background: #006ab8;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 999999;
+}
+.index-order a {
+    padding-top: 3px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.index-order .text {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    line-height: 20px;
+    color: #006ab8;
+    font-size: 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.index-order .tel {
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.index-order .tel i {
+    height: 32px;
+    width: 32px;
+    display: block;
+    background: url("../images/tel03.png") no-repeat center center;
+    background-size: 26px auto;
+    margin-right: 4px;
+}
+body{
+    padding-bottom: 80px;
+}
