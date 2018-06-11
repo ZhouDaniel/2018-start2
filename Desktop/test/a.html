@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/less.css">
+</head>
+<body>
+<div class="box">
+    <p>
+        博客
+        学院
+        下载
+        GitChat
+        论坛
+        问答
+        商城
+        VIP
+        活动
+        招聘
+        ITeye
+        码云
+        CSTO
+
+        搜博主文章
+        写博客
+        发Chat
+        登录注册
+        mozuncangtianbaxue的博客
+        RSS订阅
+        个人资料
+
+        红尘客栈-古月
+        关注
+        原创
+        61
+        粉丝
+        12
+        喜欢
+        6
+        评论
+        6
+        等级： 访问： 3万+ 积分： 1110 排名： 4万+
+        勋章：
+
+        最新文章
+        jq中的各种特效
+        input type=hidden value="${memberId}"
+        $.ajax的各个参数
+        window.onload
+        匿名函数如何加载自动执行
+        个人分类
+        css html 17篇
+        js 71篇
+        前端 21篇
+        php 1篇
+        github 1篇
+        html5 css3 7篇
+        jquery 2篇
+        文件上传-路径隐藏 1篇
+        js数组 4篇
+        js中相似方法的区别 2篇
+        css 28篇
+        计算机网络基础 3篇
+        php mysql 1篇
+        git 2篇
+        JSON 1篇
+        svn 1篇
+        快捷键 1篇
+        react 2篇
+        前端渲染 1篇
+        前端性能优化 1篇
+        grunt 2篇
+        程序员开发工具 3篇
+        js插件 2篇
+        nodejs 2篇
+        css3 1篇
+        VPN 1篇
+        $.ajax 1篇
+        展开
+        归档
+        2018年1月 6篇
+        2017年12月 16篇
+        2017年11月 14篇
+        2017年10月 9篇
+        2017年9月 24篇
+        2017年8月 79篇
+        2017年7月 15篇
+        展开
+        热门文章
+        class类命名
+        阅读量：4212
+        企业号开发者接口文档
+        阅读量：1272
+        css3 html5动画特效
+        阅读量：1148
+        Hbuilder常用快捷键功能.
+        阅读量：1022
+        html css知识大全
+        阅读量：916
+        判断JS数据类型的四种方法
+        阅读量：840
+        nodejs是用来做什么的
+        阅读量：832
+        github上写简历
+        阅读量：809
+        js实现点击切换checkbox背景图片
+        阅读量：690
+        javascript的阻止默认事件和阻止冒泡事件
+        阅读量：680
+        最新评论
+        github上写简历
+        u012158998：想问下阿里云的这个模板只有一个吗
+        图解 HTTP 协议
+        lla520：楼主辛苦了。
+        js中的数组
+        shengjmm：不错的文章。
+        javascript Window...
+        sky15732625340：非常详细，感谢分享。
+        javascript Window...
+        sky15732625340：很有些msdn的风格。
+        文件上传
+        sky15732625340：感谢分享。
+
+        联系我们
+
+        客服
+        请扫描二维码联系客服
+
+        webmaster@csdn.net
+
+        400-660-0108
+
+        QQ客服 客服论坛
+
+        关于招聘广告服务  百度
+        ©1999-2018 CSDN版权所有
+        京ICP证09002463号
+        经营性网站备案信息
+        网络110报警服务
+        中国互联网举报中心
+        北京互联网违法和不良信息举报中心
+        转
+        javascript的阻止默认事件和阻止冒泡事件
+        2017年08月08日 14:22:22
+        阅读数：706
+        转载自：http://www.cnblogs.com/ishenghuo/p/4266850.html
+
+        javascript的阻止默认事件和阻止冒泡事件
+
+        这两个方面的知识，在妙味课堂中有听过，再次复习一下：
+
+        原文来自：【http://www.cnblogs.com/Essence/p/4266618.html】
+
+        事件冒泡与默认行为
+
+        在说事件冒泡之前，我们先说说事件对象（Event）
+
+        Event
+        在触发DOM上某个事件时，会产生一个事件对象event，这个对象包含着所有事件有关的信息（导致事件的元素、事件的类型、与特定事件相关的信息）
+        所有浏览器都支持Event对象，但支持方式不同
+        IE中的事件对象：window.event
+
+
+        复制代码
+        复制代码
+        　　　　　/*
+        封装Event对象
+        IE：window.event
+        */
+        function getEvent(event){
+        return event?event:window.event;
+        }
+        复制代码
+        复制代码
+
+
+        　　
+
+        事件冒泡
+        什么是事件冒泡
+        即事件开始时由最具体的元素（文档中嵌套最深的那个元素）接收，然后逐级向上传播到较不为具体的节点
+        所有浏览器都支持事件冒泡
+        复制代码
+        复制代码
+
+复制代码
+复制代码
+当在span、p、div元素上各绑定一个click事件，当单击span元素时，会依次触发三个事件，即span、p、div元素上的click事件，这就是事件冒泡，按照DOM层次结构像水泡一样不断向上直至顶端
+
+　　阻止事件冒泡
+DOM中提供stopPropagation()方法，但IE不支持，使用event对象在事件函数中调用就行
+IE中提供的是，cancelBubble属性，默认为false，当它设置为true时，就是阻止事件冒泡，也是用event对象在事件函数中调用
+复制代码
+复制代码
+/*
+封装事件冒泡函数：
+document.all:判断浏览器是否是IE
+IE：cancelBubble
+Firefox：stopPropagation
+*/
+function stopPropagation(e){
+var e = window.event || e;
+if(document.all){
+e.cancelBubble = true;
+}else{
+e.stopPropagation();
+}
+}
+复制代码
+复制代码
+
+
+jQuery中提供了stopPropagation()方法来停止事件冒泡，当需要时，只需用用event对象来调用就行，即event.stopPropagation();
+默认行为
+什么是默认行为
+网页元素，都有自己的默认行为，例如，单击超链接会跳转...
+阻止默认行为
+DOM中提供preventDefault()方法来取消事件默认行为，但是只有当cancelable属性设置为true的事件，才可以使用preventDefault()来取消事件默认行为，使用event对象在事件函数中调用就行
+IE中提供的是returnValue属性，默认为true，当它设置为false时，就是取消事件默认行为，也是用event对象在事件函数中调用
+复制代码
+复制代码
+/*
+封装阻止元素的默认行为函数
+IE：returnValue
+DOM：preventDefault
+*/
+function preventDefaultAction(event){
+var event = window.event || event;
+if(document.all){
+//支持IE
+event.returnValue = false;
+}else{
+//IE不支持
+event.preventDefault();
+}
+}
+复制代码
+复制代码
+jQuery中提供了preventDefault()方法来阻止元素的默认行为，只需要用event对象来调用就好，即event.preventDefault()
+如果想同时对事件对象停止冒泡和默认行为，可以在事件处理函数中返回false。这是对事件对象同时调用stopPropagation()方法和preventDefault()方法的一种简写方式
+
+文章标签： 默认 冒泡事件
+个人分类： js
+
+想对作者说点什么？ 我来说一句
+Part 10：Cocos2d-x用户事件
+了解Cocos2d-x的用户输入事件处理，这些事件包括：触摸事件、键盘事件、鼠标事件、加速度事件和自定义事件等。
+学院
+2016年04月11日 17:28
+阻止事件冒泡，阻止默认事件，event.stopPropagation()和event.preventDefault()，return false的区别
+今天来看看前端的冒泡和事件默认事件如何处理 1.event.stopPropagation()方法 这是阻止事件的冒泡方法，不让事件向documen上蔓延，但是默认事件任然会执行，当你掉用这个方法...
+wxl1555 wxl1555
+2016-11-11 15:06:26
+阅读数：34783
+广告
+阻止默认行为
+一、什么是默认行为 默认行为是指html标签自带的默认行为，比如a标签的默认跳转，button标签的默认提交。二、为什么要阻止默认行为 比如之前做的一个项目换乘案内只有首页的设计是自己的，剩下的数...
+candy_tity candy_tity
+2016-11-17 12:23:15
+阅读数：372
+Angularjs 阻止默认事件
+Angularjs 阻止默认事件
+wild46cat wild46cat
+2016-09-05 11:14:54
+阅读数：4772
+strict严格模式和非严格模式的区别
+严格模式与非严格模式的语法区别
+qq_33504633 qq_33504633
+2016-12-22 14:41:45
+阅读数：470
+DOM的默认事件、事件模型、事件委托、阻止默认事件、冒泡事件的方式等。
+原生JavaScript事件详解： http://www.cnblogs.com/iyangyuan/p/4190773.htmlDOM0,DOM2,DOM3事件,事件基础知识入门DOM0,DOM2,...
+sinat_17775997 sinat_17775997
+2018-03-07 19:40:07
+阅读数：135
+阻止a标签默认事件的几种简单方法
+第一种： 百度 或者百度 测试：（可行）百度 百度1 function myjs(){ alert("a标签默认事件被阻止，执行js函数"); } 第二种：百度...
+wangcuiling_123 wangcuiling_123
+2017-06-27 14:57:20
+阅读数：1058
+jQuery 中的事件冒泡和阻止默认行为
+jQuery 中的事件冒泡和阻止默认行为 参考资料： 《锋利的jQuery》    作者：单东林 张晓菲 魏然    出版社: 人民邮电出版社 1、事件冒泡 ...
+aimartt aimartt
+2012-08-13 15:21:24
+阅读数：24747
+js阻止事件冒泡的两种方法
+一、冒泡事件简介 当我们点击一个控件的时候，如果包括这个控件的父控件也有click事件，则会继续执行。 方法一：event.stopPropagation( ); 例如：     段落文本...
+shangazhe shangazhe
+2017-01-18 10:21:32
+阅读数：14814
+Js 冒泡事件阻止
+Js 冒泡事件阻止 1. 事件目标 现在，事件处理程序中的变量event保存着事件对象。而event.target属性保存着发生事件的目标元素。这个属性是DOM API中规定的...
+dx18520548758 dx18520548758
+2017-03-14 11:17:58
+阅读数：867
+谷歌Chrome，火狐Fire fox、IE阻止事件冒泡的兼容方法 -- sanai
+兼容谷歌、火狐、IE的阻止事件冒泡的兼容方法。
+sanai_1992 sanai_1992
+2017-05-12 18:04:49
+阅读数：2285
+JS阻止冒泡事件和默认事件（IE和其他浏览器兼容）
+冒泡事件：比如我们点击了一个元素然后从它本身开始一层一层向上的父元素都做出反应直到根元素 默认事件：像a标签的点击跳转和页面鼠标右键单击弹出菜单等都是默认事件 我们有时想要阻止这些事件需要注意的是IE...
+liona_koukou liona_koukou
+2016-11-18 10:33:42
+阅读数：2358
+vuejs-阻止事件冒泡与默认行为
+阻止事件冒泡与默认行为
+Levis_1993 Levis_1993
+2017-05-18 18:40:59
+阅读数：13431
+JQuery中阻止事件冒泡方式及其区别
+JQuery 提供了两种方式来阻止事件冒泡。方式一：event.stopPropagation();        $("#div1").mousedown(function(event){     ...
+JeamKing JeamKing
+2010-02-27 16:32:00
+阅读数：287774
+
+xss攻击原理与解决方法
+概述XSS攻击是Web攻击中最常见的攻击方法之一，它是通过对网页注入可执行代码且成功地被浏览器执行，达到攻击的目的，形成了一次有效XSS攻击，一旦攻击成功，它可以获取用户的联系人列表，然后向联系人发送...
+qq_21956483 qq_21956483
+2017-01-12 14:51:29
+阅读数：14599
+jQuery阻止向上冒泡事件
+jQuery阻止向上冒泡
+fangfengzhen115 fangfengzhen115
+2015-05-11 11:27:04
+阅读数：2289
+防止事件冒泡和阻止默认事件的兼容写法
+阻止事件的传播兼容function(e){ var e=e||window.event; e.stopPropagation();//阻止事件的传播(包...
+learner_boy learner_boy
+2017-06-06 18:20:00
+阅读数：722
+如何阻止事件冒泡和默认事件
+一、冒泡事件 我们都知道冒泡就像水底气泡浮到水面这一过程。冒泡事件即是事件从最底层逐个经过上面一级级事件的过程，就是冒泡事件。那么如何有效的阻止冒泡事件的发生？其实在非IE浏览器中提供了一个事件对象 ...
+u011641865 u011641865
+2016-04-26 08:52:25
+阅读数：6303
+HTML如何阻止事件冒泡
+（1）什么是事件起泡  首先你要明白一点，当一个事件发生的时候，该事件总是有一个事件源，即引发这个事件的对象，一个事件不能凭空产生，这就是事件的发生。  当事件发生后，这个事件就要开始传播。为...
+leishi8819 leishi8819
+2016-08-11 13:00:54
+阅读数：4661
+
+JavaScript中事件捕获和事件冒泡以及如何阻止冒泡事件和默认事件
+1. 阻止冒泡事件 主要是用于阻止事件传播。阻止它被分派到其他的DOM节点上，在事件传播的任何阶段都能使用。使用方法如下（兼容IE）： function stopBubble(event){ if(...
+michael8512 michael8512
+2017-08-21 11:15:45
+阅读数：840
+加入CSDN，享受更精准的内容推荐，与500万程序员共同成长！登录 注册
+
+0
+
+目录
+
+收藏
+
+评论
+
+微信
+
+微博
+
+QQ
+
+
+
+</p>
+</div>
+
+<div class="box2">
+
+    <button>close</button>
+    this is box2
+    <p>
+        博客
+        学院
+        下载
+        GitChat
+        论坛
+        问答
+        商城
+        VIP
+        活动
+        招聘
+        ITeye
+        码云
+        CSTO
+
+        搜博主文章
+        写博客
+        发Chat
+        登录注册
+        mozuncangtianbaxue的博客
+        RSS订阅
+        个人资料
+
+        红尘客栈-古月
+        关注
+        原创
+        61
+        粉丝
+        12
+        喜欢
+        6
+        评论
+        6
+        等级： 访问： 3万+ 积分： 1110 排名： 4万+
+        勋章：
+
+        最新文章
+        jq中的各种特效
+        input type=hidden value="${memberId}"
+        $.ajax的各个参数
+        window.onload
+        匿名函数如何加载自动执行
+        个人分类
+        css html 17篇
+        js 71篇
+        前端 21篇
+        php 1篇
+        github 1篇
+        html5 css3 7篇
+        jquery 2篇
+        文件上传-路径隐藏 1篇
+        js数组 4篇
+        js中相似方法的区别 2篇
+        css 28篇
+        计算机网络基础 3篇
+        php mysql 1篇
+        git 2篇
+        JSON 1篇
+        svn 1篇
+        快捷键 1篇
+        react 2篇
+        前端渲染 1篇
+        前端性能优化 1篇
+        grunt 2篇
+        程序员开发工具 3篇
+        js插件 2篇
+        nodejs 2篇
+        css3 1篇
+        VPN 1篇
+        $.ajax 1篇
+        展开
+        归档
+        2018年1月 6篇
+        2017年12月 16篇
+        2017年11月 14篇
+        2017年10月 9篇
+        2017年9月 24篇
+        2017年8月 79篇
+        2017年7月 15篇
+        展开
+        热门文章
+        class类命名
+        阅读量：4212
+        企业号开发者接口文档
+        阅读量：1272
+        css3 html5动画特效
+        阅读量：1148
+        Hbuilder常用快捷键功能.
+        阅读量：1022
+        html css知识大全
+        阅读量：916
+        判断JS数据类型的四种方法
+        阅读量：840
+        nodejs是用来做什么的
+        阅读量：832
+        github上写简历
+        阅读量：809
+        js实现点击切换checkbox背景图片
+        阅读量：690
+        javascript的阻止默认事件和阻止冒泡事件
+        阅读量：680
+        最新评论
+        github上写简历
+        u012158998：想问下阿里云的这个模板只有一个吗
+        图解 HTTP 协议
+        lla520：楼主辛苦了。
+        js中的数组
+        shengjmm：不错的文章。
+        javascript Window...
+        sky15732625340：非常详细，感谢分享。
+        javascript Window...
+        sky15732625340：很有些msdn的风格。
+        文件上传
+        sky15732625340：感谢分享。
+
+        联系我们
+
+        客服
+        请扫描二维码联系客服
+
+        webmaster@csdn.net
+
+        400-660-0108
+
+        QQ客服 客服论坛
+
+        关于招聘广告服务  百度
+        ©1999-2018 CSDN版权所有
+        京ICP证09002463号
+        经营性网站备案信息
+        网络110报警服务
+        中国互联网举报中心
+        北京互联网违法和不良信息举报中心
+        转
+        javascript的阻止默认事件和阻止冒泡事件
+        2017年08月08日 14:22:22
+        阅读数：706
+        转载自：http://www.cnblogs.com/ishenghuo/p/4266850.html
+
+        javascript的阻止默认事件和阻止冒泡事件
+
+        这两个方面的知识，在妙味课堂中有听过，再次复习一下：
+
+        原文来自：【http://www.cnblogs.com/Essence/p/4266618.html】
+
+        事件冒泡与默认行为
+
+        在说事件冒泡之前，我们先说说事件对象（Event）
+
+        Event
+        在触发DOM上某个事件时，会产生一个事件对象event，这个对象包含着所有事件有关的信息（导致事件的元素、事件的类型、与特定事件相关的信息）
+        所有浏览器都支持Event对象，但支持方式不同
+        IE中的事件对象：window.event
+
+
+        复制代码
+        复制代码
+        　　　　　/*
+        封装Event对象
+        IE：window.event
+        */
+        function getEvent(event){
+        return event?event:window.event;
+        }
+        复制代码
+        复制代码
+
+
+        　　
+
+        事件冒泡
+        什么是事件冒泡
+        即事件开始时由最具体的元素（文档中嵌套最深的那个元素）接收，然后逐级向上传播到较不为具体的节点
+        所有浏览器都支持事件冒泡
+        复制代码
+        复制代码
+
+        复制代码
+        复制代码
+        当在span、p、div元素上各绑定一个click事件，当单击span元素时，会依次触发三个事件，即span、p、div元素上的click事件，这就是事件冒泡，按照DOM层次结构像水泡一样不断向上直至顶端
+
+        　　阻止事件冒泡
+        DOM中提供stopPropagation()方法，但IE不支持，使用event对象在事件函数中调用就行
+        IE中提供的是，cancelBubble属性，默认为false，当它设置为true时，就是阻止事件冒泡，也是用event对象在事件函数中调用
+        复制代码
+        复制代码
+        /*
+        封装事件冒泡函数：
+        document.all:判断浏览器是否是IE
+        IE：cancelBubble
+        Firefox：stopPropagation
+        */
+        function stopPropagation(e){
+        var e = window.event || e;
+        if(document.all){
+        e.cancelBubble = true;
+        }else{
+        e.stopPropagation();
+        }
+        }
+        复制代码
+        复制代码
+
+
+        jQuery中提供了stopPropagation()方法来停止事件冒泡，当需要时，只需用用event对象来调用就行，即event.stopPropagation();
+        默认行为
+        什么是默认行为
+        网页元素，都有自己的默认行为，例如，单击超链接会跳转...
+        阻止默认行为
+        DOM中提供preventDefault()方法来取消事件默认行为，但是只有当cancelable属性设置为true的事件，才可以使用preventDefault()来取消事件默认行为，使用event对象在事件函数中调用就行
+        IE中提供的是returnValue属性，默认为true，当它设置为false时，就是取消事件默认行为，也是用event对象在事件函数中调用
+        复制代码
+        复制代码
+        /*
+        封装阻止元素的默认行为函数
+        IE：returnValue
+        DOM：preventDefault
+        */
+        function preventDefaultAction(event){
+        var event = window.event || event;
+        if(document.all){
+        //支持IE
+        event.returnValue = false;
+        }else{
+        //IE不支持
+        event.preventDefault();
+        }
+        }
+        复制代码
+        复制代码
+        jQuery中提供了preventDefault()方法来阻止元素的默认行为，只需要用event对象来调用就好，即event.preventDefault()
+        如果想同时对事件对象停止冒泡和默认行为，可以在事件处理函数中返回false。这是对事件对象同时调用stopPropagation()方法和preventDefault()方法的一种简写方式
+
+        文章标签： 默认 冒泡事件
+        个人分类： js
+
+        想对作者说点什么？ 我来说一句
+        Part 10：Cocos2d-x用户事件
+        了解Cocos2d-x的用户输入事件处理，这些事件包括：触摸事件、键盘事件、鼠标事件、加速度事件和自定义事件等。
+        学院
+        2016年04月11日 17:28
+        阻止事件冒泡，阻止默认事件，event.stopPropagation()和event.preventDefault()，return false的区别
+        今天来看看前端的冒泡和事件默认事件如何处理 1.event.stopPropagation()方法 这是阻止事件的冒泡方法，不让事件向documen上蔓延，但是默认事件任然会执行，当你掉用这个方法...
+        wxl1555 wxl1555
+        2016-11-11 15:06:26
+        阅读数：34783
+        广告
+        阻止默认行为
+        一、什么是默认行为 默认行为是指html标签自带的默认行为，比如a标签的默认跳转，button标签的默认提交。二、为什么要阻止默认行为 比如之前做的一个项目换乘案内只有首页的设计是自己的，剩下的数...
+        candy_tity candy_tity
+        2016-11-17 12:23:15
+        阅读数：372
+        Angularjs 阻止默认事件
+        Angularjs 阻止默认事件
+        wild46cat wild46cat
+        2016-09-05 11:14:54
+        阅读数：4772
+        strict严格模式和非严格模式的区别
+        严格模式与非严格模式的语法区别
+        qq_33504633 qq_33504633
+        2016-12-22 14:41:45
+        阅读数：470
+        DOM的默认事件、事件模型、事件委托、阻止默认事件、冒泡事件的方式等。
+        原生JavaScript事件详解： http://www.cnblogs.com/iyangyuan/p/4190773.htmlDOM0,DOM2,DOM3事件,事件基础知识入门DOM0,DOM2,...
+        sinat_17775997 sinat_17775997
+        2018-03-07 19:40:07
+        阅读数：135
+        阻止a标签默认事件的几种简单方法
+        第一种： 百度 或者百度 测试：（可行）百度 百度1 function myjs(){ alert("a标签默认事件被阻止，执行js函数"); } 第二种：百度...
+        wangcuiling_123 wangcuiling_123
+        2017-06-27 14:57:20
+        阅读数：1058
+        jQuery 中的事件冒泡和阻止默认行为
+        jQuery 中的事件冒泡和阻止默认行为 参考资料： 《锋利的jQuery》    作者：单东林 张晓菲 魏然    出版社: 人民邮电出版社 1、事件冒泡 ...
+        aimartt aimartt
+        2012-08-13 15:21:24
+        阅读数：24747
+        js阻止事件冒泡的两种方法
+        一、冒泡事件简介 当我们点击一个控件的时候，如果包括这个控件的父控件也有click事件，则会继续执行。 方法一：event.stopPropagation( ); 例如：     段落文本...
+        shangazhe shangazhe
+        2017-01-18 10:21:32
+        阅读数：14814
+        Js 冒泡事件阻止
+        Js 冒泡事件阻止 1. 事件目标 现在，事件处理程序中的变量event保存着事件对象。而event.target属性保存着发生事件的目标元素。这个属性是DOM API中规定的...
+        dx18520548758 dx18520548758
+        2017-03-14 11:17:58
+        阅读数：867
+        谷歌Chrome，火狐Fire fox、IE阻止事件冒泡的兼容方法 -- sanai
+        兼容谷歌、火狐、IE的阻止事件冒泡的兼容方法。
+        sanai_1992 sanai_1992
+        2017-05-12 18:04:49
+        阅读数：2285
+        JS阻止冒泡事件和默认事件（IE和其他浏览器兼容）
+        冒泡事件：比如我们点击了一个元素然后从它本身开始一层一层向上的父元素都做出反应直到根元素 默认事件：像a标签的点击跳转和页面鼠标右键单击弹出菜单等都是默认事件 我们有时想要阻止这些事件需要注意的是IE...
+        liona_koukou liona_koukou
+        2016-11-18 10:33:42
+        阅读数：2358
+        vuejs-阻止事件冒泡与默认行为
+        阻止事件冒泡与默认行为
+        Levis_1993 Levis_1993
+        2017-05-18 18:40:59
+        阅读数：13431
+        JQuery中阻止事件冒泡方式及其区别
+        JQuery 提供了两种方式来阻止事件冒泡。方式一：event.stopPropagation();        $("#div1").mousedown(function(event){     ...
+        JeamKing JeamKing
+        2010-02-27 16:32:00
+        阅读数：287774
+
+        xss攻击原理与解决方法
+        概述XSS攻击是Web攻击中最常见的攻击方法之一，它是通过对网页注入可执行代码且成功地被浏览器执行，达到攻击的目的，形成了一次有效XSS攻击，一旦攻击成功，它可以获取用户的联系人列表，然后向联系人发送...
+        qq_21956483 qq_21956483
+        2017-01-12 14:51:29
+        阅读数：14599
+        jQuery阻止向上冒泡事件
+        jQuery阻止向上冒泡
+        fangfengzhen115 fangfengzhen115
+        2015-05-11 11:27:04
+        阅读数：2289
+        防止事件冒泡和阻止默认事件的兼容写法
+        阻止事件的传播兼容function(e){ var e=e||window.event; e.stopPropagation();//阻止事件的传播(包...
+        learner_boy learner_boy
+        2017-06-06 18:20:00
+        阅读数：722
+        如何阻止事件冒泡和默认事件
+        一、冒泡事件 我们都知道冒泡就像水底气泡浮到水面这一过程。冒泡事件即是事件从最底层逐个经过上面一级级事件的过程，就是冒泡事件。那么如何有效的阻止冒泡事件的发生？其实在非IE浏览器中提供了一个事件对象 ...
+        u011641865 u011641865
+        2016-04-26 08:52:25
+        阅读数：6303
+        HTML如何阻止事件冒泡
+        （1）什么是事件起泡  首先你要明白一点，当一个事件发生的时候，该事件总是有一个事件源，即引发这个事件的对象，一个事件不能凭空产生，这就是事件的发生。  当事件发生后，这个事件就要开始传播。为...
+        leishi8819 leishi8819
+        2016-08-11 13:00:54
+        阅读数：4661
+
+        JavaScript中事件捕获和事件冒泡以及如何阻止冒泡事件和默认事件
+        1. 阻止冒泡事件 主要是用于阻止事件传播。阻止它被分派到其他的DOM节点上，在事件传播的任何阶段都能使用。使用方法如下（兼容IE）： function stopBubble(event){ if(...
+        michael8512 michael8512
+        2017-08-21 11:15:45
+        阅读数：840
+        加入CSDN，享受更精准的内容推荐，与500万程序员共同成长！登录 注册
+
+        0
+
+        目录
+
+        收藏
+
+        评论
+
+        微信
+
+        微博
+
+        QQ
+
+
+
+    </p>
+</div>
+
+
+
+<script>
+
+    document.querySelector('.box2').onmouseover=function (e) {
+        e.stopPropagation();
+        document.querySelector('body').style.overflowY='hidden';
+    };
+    document.querySelector('button').onclick=function (ev) {
+        document.querySelector('.box2').style.display='none';
+        document.querySelector('body').style.overflowY='auto';
+    };
+</script>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .box2 {
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        background: darkgoldenrod;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        overflow: auto;
+    }
+    .box2 button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        line-height: 100px;
+    }
+
+</style>
+
+
+</body>
+</html>
