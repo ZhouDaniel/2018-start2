@@ -1,0 +1,71 @@
+@charset "UTF-8";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+p,
+tr,
+td,
+th,
+em,
+input,
+textarea,
+button,
+hr
+{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+em,
+i{
+    font-style:normal;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+textarea {
+    -webkit-appearance: none;
+    resize: none;
+}
+body{
+    font-size:14px;
+}
+body a{
+    outline: none;
+    text-decoration: none;
+}
+body a:hover{
+    color:black;
+}
+img{
+    border:none;
+}
+input{
+    outline:none;
+}
+*{
+    box-sizing: border-box;
+}
+.clearfix {
+    display: block;
+    clear: both;
+}
+.clearfix:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: '';
+}
